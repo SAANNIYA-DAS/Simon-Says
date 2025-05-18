@@ -53,11 +53,15 @@ function checkAns(indx){
         if(userSeq.length==gameSeq.length){
             setTimeout(levelUp,1000);
         }
-    }else{
+    }else{ 
         let score=level-1;
         if(score>hiScore){
            hiScore=score;
         }
+        document.querySelector("body").style.backgroundColor="red";
+        setTimeout(function(){
+            document.querySelector("body").style.backgroundColor="white";
+        }, 150);
         h2.innerHTML=`
             Game Over! Your score was <b>${score}</b><br>
             Press any key to restart.<br>
